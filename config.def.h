@@ -71,10 +71,10 @@ static const bool ANTI_ALIAS = true;
 #ifdef INCLUDE_THUMBS_CONFIG
 
 /* thumbnail sizes in pixels (width == height): */
-static const int thumb_sizes[] = { 32, 64, 96, 128, 160 };
+static const int thumb_sizes[] = { 32, 64, 96, 128, 160, 192 };
 
 /* thumbnail size at startup, index into thumb_sizes[]: */
-static const int THUMB_SIZE = 3;
+static const int THUMB_SIZE = 5;
 
 #endif
 #ifdef INCLUDE_MAPPINGS_CONFIG
