@@ -137,17 +137,17 @@ void win_init(win_t *win)
 	db = res_man == NULL ? NULL : XrmGetStringDatabase(res_man);
 
 	win_bg = win_res(db, RES_CLASS ".background", DEFAULT_WIN_BG);
-	win_fg = win_res(db, RES_CLASS ".color2", DEFAULT_WIN_FG);
+	win_fg = win_res(db, RES_CLASS ".color0", DEFAULT_WIN_FG);
 	mrk_fg = win_res(db, RES_CLASS ".color8",   DEFAULT_MARK_COLOR ? DEFAULT_MARK_COLOR : win_fg);
 	win_alloc_color(e, win_bg, &win->win_bg);
 	win_alloc_color(e, win_fg, &win->win_fg);
 	win_alloc_color(e, mrk_fg, &win->mrk_fg);
 
 #if HAVE_LIBFONTS
-	bar_bg = win_res(db, RES_CLASS ".bar.background", DEFAULT_BAR_BG ? DEFAULT_BAR_BG : win_bg);
-	bar_fg = win_res(db, RES_CLASS ".bar.foreground", DEFAULT_BAR_FG ? DEFAULT_BAR_FG : win_fg);
-	xft_alloc_color(e, bar_bg, &win->bar_bg);
-	xft_alloc_color(e, bar_fg, &win->bar_fg);
+bar_bg = win_res(db, RES_CLASS ".color3", DEFAULT_BAR_BG ? DEFAULT_BAR_BG : win_bg);
+bar_fg = win_res(db, RES_CLASS ".color0", DEFAULT_BAR_FG ? DEFAULT_BAR_FG : win_fg);
+xft_alloc_color(e, bar_bg, &win->bar_bg);
+xft_alloc_color(e, bar_fg, &win->bar_fg);
 
 	f = win_res(db, RES_CLASS ".bar.font", DEFAULT_FONT);
 	win_init_font(e, f);
