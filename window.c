@@ -136,9 +136,9 @@ void win_init(win_t *win)
 	res_man = XResourceManagerString(e->dpy);
 	db = res_man == NULL ? NULL : XrmGetStringDatabase(res_man);
 
-	win_bg = win_res(db, RES_CLASS ".window.background", DEFAULT_WIN_BG);
-	win_fg = win_res(db, RES_CLASS ".window.foreground", DEFAULT_WIN_FG);
-	mrk_fg = win_res(db, RES_CLASS ".mark.foreground",   DEFAULT_MARK_COLOR ? DEFAULT_MARK_COLOR : win_fg);
+	win_bg = win_res(db, RES_CLASS ".background", DEFAULT_WIN_BG);
+	win_fg = win_res(db, RES_CLASS ".color2", DEFAULT_WIN_FG);
+	mrk_fg = win_res(db, RES_CLASS ".color8",   DEFAULT_MARK_COLOR ? DEFAULT_MARK_COLOR : win_fg);
 	win_alloc_color(e, win_bg, &win->win_bg);
 	win_alloc_color(e, win_fg, &win->win_fg);
 	win_alloc_color(e, mrk_fg, &win->mrk_fg);
